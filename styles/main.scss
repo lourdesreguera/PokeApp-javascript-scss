@@ -9,29 +9,28 @@ body {
 
 .b-container {
     padding: 60px 38px 45px 38px;
-    
+}
+
+.b-fix {
+    position: fixed;
+    background-color: var(--bg);
+    z-index: 2;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 header {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    // img {
-    //     @media all and (min-width: 1200px) {
-    //         max-width: 500px;
-    //     }
-    // }
+    margin-top: 40px;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    h1 {
-        color: var(--text);
-        font-family: var(--semibold);
-        font-size: 24px;
-        margin: 0 0 12px 0;
-    }
+
 }
 
 .b-search {
@@ -44,6 +43,7 @@ main {
     }
     input {
         color: var(--text-input);
+        width: 70%;
         &::placeholder {
             color: var(--text-input);
             font-size: 12px;
@@ -56,4 +56,14 @@ main {
     display: flex;
     justify-content: space-between;
     margin: 12px 0 22px 0;
+}
+
+.b-search__btn--img {
+    width: 15px;
+}
+
+.back-btn {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
 }

@@ -55,8 +55,17 @@ const showDesc = (div$$) => {
     const ul$$ = document.createElement('ul');
     const firstLi$$ = document.createElement('li');
     const secLi$$ = document.createElement('li');
-    firstLi$$.textContent = 'Stats';
-    secLi$$.textContent = 'Evolution';
+    firstLi$$.textContent = 'Description';
+    secLi$$.textContent = 'Stats';
+
+
+
+    secLi$$.addEventListener('click', (e) =>{ 
+        e.stopPropagation(); 
+        showStats(divContainer$$, div$$)});
+
+
+
     ul$$.appendChild(firstLi$$);
     ul$$.appendChild(secLi$$);
     divContainer$$.appendChild(ul$$);
@@ -66,6 +75,64 @@ const showDesc = (div$$) => {
     
     callApiBio(div$$, divContainer$$);
 }
+
+
+
+
+
+
+const showStats = (divContainer, div) => {
+    divContainer.innerHTML = ''
+    callApiStats(div, divContainer);
+}
+const printPokemonsStats = (pokemons, divContainer) => {
+    const divContainer$$ = document.createElement('div');
+    const ul$$ = document.createElement('ul');
+    const firstLi$$ = document.createElement('li');
+    const secLi$$ = document.createElement('li');
+    firstLi$$.textContent = 'Description';
+    secLi$$.textContent = 'Stats';
+    ul$$.appendChild(firstLi$$);
+    ul$$.appendChild(secLi$$);
+    divContainer$$.appendChild(ul$$);
+    divContainer.appendChild(divContainer$$)
+
+    for (const stat of pokemons.stats) {
+        const globalDiv$$ = document.createElement('div');
+        globalDiv$$.innerHTML = `
+            <div class="progress-container">
+                <div class=""progress-bar style="
+                background-color: white;
+                width: ${stat.base_stat}%;
+                height: 20px;
+                border-radius: 5px;
+            "></div>
+            </div>
+            <div class="progress-text"><p>${stat.stat.name}: ${stat.base_stat}</p></div>
+        `    
+        divContainer$$.appendChild(globalDiv$$)
+    }
+
+    const divHide$$ = document.createElement('button');
+    divHide$$.classList.add('box');
+    divHide$$.classList.add('box--btn-hide');
+    divHide$$.textContent = 'Hide description';
+    divContainer$$.appendChild(divHide$$);
+    
+    divHide$$.addEventListener('click', (e) =>{ 
+        e.stopPropagation(); 
+        hide(divContainer$$)});
+
+}
+
+const callApiStats = (div, divContainer) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${div.id}/`)
+        .then(res => res.json())
+        .then(pokemonsStats => {printPokemonsStats(pokemonsStats, divContainer)})
+}
+
+
+
 
 const printPokemonsBio = (pokemons, divContainer$$) => {
     const globalDiv$$ = document.createElement('div');
@@ -121,24 +188,34 @@ const hide = (div) => {
 }
 
 const search = () => {
-    cardsContainer$$.innerHTML = ''
+    cardsContainer$$.innerHTML = '';
+    
     const filterPokemon = pokemons => {
         const pokemonFound = pokemons.results. find(pokemon => pokemon.name.includes(searchInput$$.value));
-        printOnePokemon(pokemonFound)
+        printOnePokemon(pokemonFound);
+        moreBtn$.remove();
     }
 
     fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1154`)
         .then(res => res.json())
         .then(pokemons => filterPokemon(pokemons))
+
+
+    const backBtn$$ = document.createElement('button');
+    backBtn$$.innerHTML = '<img src="assets/arrow.svg">';
+    backBtn$$.classList.add('back-btn')
+    cardsContainer$$.appendChild(backBtn$$)
+    backBtn$$.addEventListener('click', () => { 
+        backBtn$$.remove(); 
+        cardsContainer$$.innerHTML = '';
+        callApi();})    
 }
 
-searchBtn$$.addEventListener('click', search)
-
+searchBtn$$.addEventListener('click', search);
 
 const showOtherPage = () => {
     countPage += 20;
     callApi()
 }
-
 
 moreBtn$.addEventListener('click', showOtherPage);

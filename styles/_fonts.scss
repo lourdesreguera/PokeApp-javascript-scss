@@ -25,6 +25,13 @@
     --light: 'Poppins Light';
 }
 
+h1 {
+    color: var(--text);
+    font-family: var(--semibold);
+    font-size: 24px;
+    margin: 0 0 12px 0;
+}
+
 h2 {
     color: var(--text);
     font-family: var(--regular);
@@ -66,4 +73,12 @@ h2 {
     padding: 6px 15px;
     margin: 0;
     text-transform: capitalize;
+}
+
+.progress-text {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -35px;
+    left: 10px;
 }

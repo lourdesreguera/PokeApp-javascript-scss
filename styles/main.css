@@ -30,6 +30,13 @@
   --light: "Poppins Light";
 }
 
+h1 {
+  color: var(--text);
+  font-family: var(--semibold);
+  font-size: 24px;
+  margin: 0 0 12px 0;
+}
+
 h2 {
   color: var(--text);
   font-family: var(--regular);
@@ -72,6 +79,14 @@ h2 {
   text-transform: capitalize;
 }
 
+.progress-text {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -35px;
+  left: 10px;
+}
+
 .box {
   background-color: var(--bg-card);
   border: none;
@@ -83,6 +98,10 @@ h2 {
   color: var(--text-input);
   margin: 30px auto 10px auto;
   width: 100%;
+}
+
+.b-card-container {
+  margin-top: 220px;
 }
 
 .b-card-container__card {
@@ -125,6 +144,13 @@ h2 {
   margin-right: 10px;
 }
 
+.progress-container {
+  background-color: blue;
+  width: 100%;
+  height: 20px;
+  border-radius: 5px;
+}
+
 body {
   background-color: var(--bg);
 }
@@ -133,21 +159,25 @@ body {
   padding: 60px 38px 45px 38px;
 }
 
+.b-fix {
+  position: fixed;
+  background-color: var(--bg);
+  z-index: 2;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 header {
   display: flex;
   justify-content: center;
   margin-bottom: 25px;
+  margin-top: 40px;
 }
 
 main {
   display: flex;
   flex-direction: column;
-}
-main h1 {
-  color: var(--text);
-  font-family: var(--semibold);
-  font-size: 24px;
-  margin: 0 0 12px 0;
 }
 
 .b-search {
@@ -161,6 +191,7 @@ main h1 {
 }
 .b-search input {
   color: var(--text-input);
+  width: 70%;
 }
 .b-search input::-moz-placeholder {
   color: var(--text-input);
@@ -182,4 +213,14 @@ main h1 {
   display: flex;
   justify-content: space-between;
   margin: 12px 0 22px 0;
+}
+
+.b-search__btn--img {
+  width: 15px;
+}
+
+.back-btn {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */

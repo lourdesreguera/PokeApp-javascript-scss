@@ -10,18 +10,21 @@
 </head>
 <body>
     <section class="b-container">
-        <header>
-            <img src="assets/logo.svg" alt="Logo de PokeApp">
-        </header>
-        <main>
+        <section class="b-fix">
+            <header>
+                <img src="assets/logo.svg" alt="Logo de PokeApp">
+            </header>
             <h1>Pokemon list</h1>
             <div class="b-search">
                 <label for="name">Find the Pokemon you want</label>
                 <div class="b-search__input">
                     <input type="text" id="name" placeholder="Search here..." data-fn="b-search__input" class="box">
-                    <button type="submit" class="box" data-fn="b-search__btn">Search</button>
+                    <button type="submit" class="box" data-fn="b-search__btn"><img src="assets/search.svg" alt="Icono de una lupa" class="b-search__btn--img"></button>
                 </div>    
             </div>
+        </section>
+        
+        <main>
             <div class="b-card-container" data-fn="b-card-container"></div>
         </main>
     </section>
