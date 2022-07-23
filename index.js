@@ -2,14 +2,22 @@ const cardsContainer$$ = document.querySelector('[data-fn="b-card-container"]');
 const div$$ = document.querySelectorAll('.b-card-container__card');
 const searchInput$$ = document.querySelector('[data-fn="b-search__input"]');
 const searchBtn$$ = document.querySelector('[data-fn="b-search__btn"]');
+const moreBtn$ = document.createElement('button');
+moreBtn$.textContent= 'View more';
+moreBtn$.classList.add('box');
+moreBtn$.classList.add('box--btn-hide')
+
+let countPage = 0;
+
 
 
 const callApi =  () => {
-    fetch('https://pokeapi.co/api/v2/pokemon/')
+    fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${countPage}&limit=20`)
         .then(res => res.json())
         .then(pokemons => {printPokemonsCards(pokemons.results)})    
 }
 callApi();
+
 
 const printPokemonsCards = pokemons => {
     for (const pokemon of pokemons) {
@@ -26,6 +34,7 @@ const printOnePokemon = (pokemon) => {
     callApiImgs(div$$)
     
     cardsContainer$$.appendChild(div$$);
+    cardsContainer$$.appendChild(moreBtn$);
     div$$.addEventListener('click', () => showDesc(div$$))
 }
 
@@ -65,7 +74,7 @@ const printPokemonsBio = (pokemons, divContainer$$) => {
     divBiodata$$.innerHTML = `
         <h3 class="heading-card">Biodata</h3>
         <h4 class="subheading-card">Name:</h4>
-        <p class="p-card">${pokemons.name}</p>
+        <p class="p-card p-card--upper">${pokemons.name}</p>
         <h4 class="subheading-card">Height</h4>
         <p class="p-card">${(pokemons.height) * 10} cm</p>
         <h4 class="subheading-card">Weight</h4>
@@ -87,6 +96,8 @@ const printPokemonsBio = (pokemons, divContainer$$) => {
     }
 
     const divHide$$ = document.createElement('button');
+    divHide$$.classList.add('box');
+    divHide$$.classList.add('box--btn-hide');
     divHide$$.textContent = 'Hide description';    
 
     globalDiv$$.appendChild(divBiodata$$);    
@@ -122,3 +133,12 @@ const search = () => {
 }
 
 searchBtn$$.addEventListener('click', search)
+
+
+const showOtherPage = () => {
+    countPage += 20;
+    callApi()
+}
+
+
+moreBtn$.addEventListener('click', showOtherPage);

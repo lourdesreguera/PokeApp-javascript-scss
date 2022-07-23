@@ -9,12 +9,18 @@ body {
 
 .b-container {
     padding: 60px 38px 45px 38px;
+    
 }
 
 header {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
+    // img {
+    //     @media all and (min-width: 1200px) {
+    //         max-width: 500px;
+    //     }
+    // }
 }
 
 main {

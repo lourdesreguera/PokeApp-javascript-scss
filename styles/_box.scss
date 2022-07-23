@@ -3,4 +3,10 @@
     border: none;
     border-radius: 8px;
     padding: 6px 15px;
+    &--btn-hide {
+        background-color: #181817;
+        color: var(--text-input);
+        margin: 30px auto 10px auto;
+        width: 100%;
+    }
 }
