@@ -1,0 +1,38 @@
+.b-card-container__card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 70px;
+        img {
+        width: 172px;
+        position: absolute;
+        right: -30px;
+        top: -30px;
+        z-index: 1;
+    }
+}
+
+.b-description__container {
+    display: flex;
+    flex-direction: column;
+    ul {
+        padding: 0;
+        display: flex;
+        li {
+            margin-right: 20px;
+            list-style: none;
+            font-family: var(--semibold);
+            font-size: 14px;
+            color: var(--text);
+        }
+    }
+}
+
+.b-description__container--types {
+    div {
+        display: flex;
+        p {
+            margin-right: 10px;
+        }
+    }
+}

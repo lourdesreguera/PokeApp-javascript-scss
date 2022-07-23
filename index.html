@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeApp</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <section class="b-container">
+        <header>
+            <img src="assets/logo.svg" alt="Logo de PokeApp">
+        </header>
+        <main>
+            <h1>Pokemon list</h1>
+            <div class="b-search">
+                <label for="name">Find the Pokemon you want</label>
+                <div class="b-search__input">
+                    <input type="text" id="name" placeholder="Search here..." data-fn="b-search__input" class="box">
+                    <button type="submit" class="box" data-fn="b-search__btn">Search</button>
+                </div>    
+            </div>
+            <div class="b-card-container" data-fn="b-card-container"></div>
+        </main>
+    </section>
+</body>
+</html>

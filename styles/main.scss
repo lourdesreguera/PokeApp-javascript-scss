@@ -1,0 +1,53 @@
+@import '_colors';
+@import '_fonts';
+@import '_box';
+@import '_cards';
+
+body {
+    background-color: var(--bg);
+}
+
+.b-container {
+    padding: 60px 38px 45px 38px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    h1 {
+        color: var(--text);
+        font-family: var(--semibold);
+        font-size: 24px;
+        margin: 0 0 12px 0;
+    }
+}
+
+.b-search {
+    display: flex;
+    flex-direction: column;
+    label {
+        color: var(--text);
+        font-family: var(--medium);
+        font-size: 14px;
+    }
+    input {
+        color: var(--text-input);
+        &::placeholder {
+            color: var(--text-input);
+            font-size: 12px;
+            font-family: var(--medium);
+        }
+    }
+}
+
+.b-search__input {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0 22px 0;
+}
