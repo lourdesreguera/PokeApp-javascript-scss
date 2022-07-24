@@ -35,6 +35,12 @@ h1 {
   font-family: var(--semibold);
   font-size: 24px;
   margin: 0 0 12px 0;
+  padding-left: 40px;
+}
+@media screen and (min-width: 1200px) {
+  h1 {
+    padding-left: 200px;
+  }
 }
 
 h2 {
@@ -42,6 +48,11 @@ h2 {
   font-family: var(--regular);
   font-size: 18px;
   text-transform: capitalize;
+}
+@media screen and (min-width: 1200px) {
+  h2 {
+    cursor: pointer;
+  }
 }
 
 .heading-card {
@@ -96,6 +107,7 @@ h2 {
   color: var(--text-input);
   margin: 30px auto 10px auto;
   width: 100%;
+  cursor: pointer;
 }
 
 .b-card-container {
@@ -107,6 +119,14 @@ h2 {
   flex-direction: column;
   position: relative;
   margin-bottom: 70px;
+}
+@media screen and (min-width: 1200px) {
+  .b-card-container__card {
+    width: calc(33.33% - 20px);
+    float: left;
+    margin-right: 20px;
+    box-sizing: border-box;
+  }
 }
 .b-card-container__card img {
   width: 172px;
@@ -159,6 +179,10 @@ body {
   background-color: var(--bg);
 }
 
+.logo-header {
+  cursor: pointer;
+}
+
 .b-container {
   padding: 60px 38px 45px 38px;
 }
@@ -170,6 +194,7 @@ body {
   top: 0px;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
 }
 
 header {
@@ -187,6 +212,14 @@ main {
 .b-search {
   display: flex;
   flex-direction: column;
+  padding: 0 40px;
+}
+@media screen and (min-width: 1200px) {
+  .b-search {
+    justify-content: center;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
 }
 .b-search label {
   color: var(--text);
@@ -196,6 +229,12 @@ main {
 .b-search input {
   color: var(--text-input);
   width: 70%;
+}
+@media screen and (min-width: 1200px) {
+  .b-search input {
+    width: 90%;
+    margin-right: 20px;
+  }
 }
 .b-search input::-moz-placeholder {
   color: var(--text-input);
@@ -218,6 +257,9 @@ main {
   justify-content: space-between;
   margin: 12px 0 22px 0;
 }
+.b-search__input button {
+  cursor: pointer;
+}
 
 .b-search__btn--img {
   width: 15px;
@@ -227,4 +269,10 @@ main {
   background-color: transparent;
   border: none;
   margin-bottom: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .back-btn {
+    display: flex;
+    cursor: pointer;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -1,3 +1,4 @@
+const logoHeader$$ = document.querySelector('.logo-header');
 const cardsContainer$$ = document.querySelector('[data-fn="b-card-container"]');
 const div$$ = document.querySelectorAll('.b-card-container__card');
 const searchInput$$ = document.querySelector('[data-fn="b-search__input"]');
@@ -74,6 +75,8 @@ const printInfo = (div$$) => {
     secLi$$.classList.add('b-description__container--stats')
     firstLi$$.textContent = 'Description';
     secLi$$.textContent = 'Stats';
+    firstLi$$.style.cursor = 'pointer';
+    secLi$$.style.cursor = 'pointer';
     ul$$.appendChild(firstLi$$);
     ul$$.appendChild(secLi$$);
     divContainer$$.appendChild(ul$$);
@@ -221,3 +224,8 @@ const showOtherPage = () => {
 }
 
 moreBtn$.addEventListener('click', showOtherPage);
+
+logoHeader$$.addEventListener('click', () => {
+    cardsContainer$$.innerHTML = '';
+    countPage = 0;
+    callApi()})

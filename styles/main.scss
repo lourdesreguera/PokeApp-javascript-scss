@@ -7,6 +7,10 @@ body {
     background-color: var(--bg);
 }
 
+.logo-header {
+    cursor: pointer;
+}
+
 .b-container {
     padding: 60px 38px 45px 38px;
 }
@@ -18,6 +22,7 @@ body {
     top: 0px;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
 }
 
 header {
@@ -36,6 +41,12 @@ main {
 .b-search {
     display: flex;
     flex-direction: column;
+    padding: 0 40px;
+    @media screen and (min-width: 1200px) {
+        justify-content: center;
+        padding-left: 200px;
+        padding-right: 200px;
+    } 
     label {
         color: var(--text);
         font-family: var(--medium);
@@ -44,6 +55,10 @@ main {
     input {
         color: var(--text-input);
         width: 70%;
+        @media screen and (min-width: 1200px) {
+            width: 90%;
+            margin-right: 20px;
+        } 
         &::placeholder {
             color: var(--text-input);
             font-size: 12px;
@@ -56,6 +71,9 @@ main {
     display: flex;
     justify-content: space-between;
     margin: 12px 0 22px 0;
+    button {
+        cursor: pointer;
+    }
 }
 
 .b-search__btn--img {
@@ -66,4 +84,8 @@ main {
     background-color: transparent;
     border: none;
     margin-bottom: 10px;
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        cursor: pointer;
+    } 
 }
