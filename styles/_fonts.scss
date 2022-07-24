@@ -76,9 +76,7 @@ h2 {
 }
 
 .progress-text {
-    display: flex;
-    align-items: center;
-    position: relative;
-    top: -35px;
-    left: 10px;
+    font-family: var(--regular);
+    font-size: 12px;
+    color: var(--text);
 }
