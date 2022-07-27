@@ -48,7 +48,7 @@ const callApiImgs = (div) => {
 
 const printPokemonsImg = (pokemon, div) => {
     const img$$ = document.createElement('img');
-    img$$.setAttribute('src', pokemon.front_default);
+    img$$.setAttribute('src', pokemon.other.dream_world.front_default);
     div.appendChild(img$$);   
 }
 
