@@ -156,6 +156,13 @@ h2 {
   right: 10px;
   top: 10px;
   z-index: 1;
+  height: 100px;
+}
+@media screen and (min-width: 1200px) {
+  .b-card-container__card img {
+    width: 130px;
+    height: 117px;
+  }
 }
 
 .b-description__container {
