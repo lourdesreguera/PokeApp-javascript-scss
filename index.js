@@ -197,7 +197,7 @@ const search = () => {
     cardsContainer$$.innerHTML = '';
     
     const filterPokemon = pokemons => {
-        const pokemonFound = pokemons.results. find(pokemon => pokemon.name.includes(searchInput$$.value));
+        const pokemonFound = pokemons.results.find(pokemon => pokemon.name.includes(searchInput$$.value.toLowerCase()));
         printOnePokemon(pokemonFound);
         moreBtn$.remove();
     }
